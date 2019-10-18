@@ -3,7 +3,9 @@ const cors = require('cors');
 const path = require('path');
 const forecast = require('./src/weather')
 const gas = require('./src/gas')
-const bus = require('./src/bus')
+const bus6 = require('./src/bus6')
+const bus13 = require('./src/bus13')
+const bus18 = require('./src/bus18')
 const aqi = require('./src/aqi')
 const news = require('./src/news')
 const currency = require('./src/currency')
@@ -57,7 +59,7 @@ app.get('/api/gas', (req, res) => {
 
 app.get('/api/bus6', (req, res) => {
 
-    bus(6,(error, busData) => {
+    bus6((error, busData) => {
         if (error) {
             return res.send({ error })
         }
@@ -70,7 +72,7 @@ app.get('/api/bus6', (req, res) => {
 
 app.get('/api/bus13', (req, res) => {
 
-    bus(13,(error, busData) => {
+    bus13((error, busData) => {
         if (error) {
             return res.send({ error })
         }
@@ -83,7 +85,7 @@ app.get('/api/bus13', (req, res) => {
 
 app.get('/api/bus18', (req, res) => {
 
-    bus(18,(error, busData) => {
+    bus18((error, busData) => {
         if (error) {
             return res.send({ error })
         }
