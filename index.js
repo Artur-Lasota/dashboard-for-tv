@@ -11,10 +11,11 @@ const bitcoin = require('./src/bitcoin')
 const bus_to_chart = require('./src/bus_to_chart')
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 
 if(process.env.NODE_ENV === 'production') {
-app.use(cors({ origin: 'https://dashboard-for-tv.herokuapp.com/', credentials: true}));
+app.use(cors({ origin: 'https://ac-tv-app.herokuapp.com/', credentials: true}));
+// https://dashboard-for-tv.herokuapp.com/
 } else {
 app.use(cors({ origin: 'http://localhost:3000', credentials: true}));
 }
