@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js && cd app && npm run build",
+    "heroku-postbuild": "cd app && npm run build",
+    "start": "node index.js",
     "dev": "concurrently --kill-others \"cd ./app && npm run start\" \"nodemon index.js\""
   },
   "author": "",
