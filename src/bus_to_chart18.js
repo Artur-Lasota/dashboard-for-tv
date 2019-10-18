@@ -1,13 +1,13 @@
 const request = require('request')
 
-const bus_to_chart = (busNum, callback) => {
+const bus_to_chart18 = (callback) => {
 
     var hour = [];
     var minute = [];
     var minuteChart = [];
     var iterator = 0;
     var percentsData = [];
-    var url = 'http://localhost:5000/api/bus'+busNum
+    var url = 'http://localhost:5000/api/bus18'
     var currentTime = new Date();
     var modifiedTime = new Date();
     
@@ -97,4 +97,4 @@ const bus_to_chart = (busNum, callback) => {
         }
         });
     }
-module.exports = bus_to_chart
+module.exports = bus_to_chart18

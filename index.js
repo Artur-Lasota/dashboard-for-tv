@@ -8,7 +8,9 @@ const aqi = require('./src/aqi')
 const news = require('./src/news')
 const currency = require('./src/currency')
 const bitcoin = require('./src/bitcoin')
-const bus_to_chart = require('./src/bus_to_chart')
+const bus_to_chart6 = require('./src/bus_to_chart6')
+const bus_to_chart13 = require('./src/bus_to_chart13')
+const bus_to_chart18 = require('./src/bus_to_chart18')
 
 const app = express()
 const port = process.env.PORT || 5000
@@ -94,7 +96,7 @@ app.get('/api/bus18', (req, res) => {
 
 app.get('/api/bus_to_chart6', (req, res) => {
 
-    bus_to_chart(6,(error, percentData) => {
+    bus_to_chart6((error, percentData) => {
         if (error) {
             return res.send({ error })
         }
@@ -107,7 +109,7 @@ app.get('/api/bus_to_chart6', (req, res) => {
 
 app.get('/api/bus_to_chart13', (req, res) => {
 
-    bus_to_chart(13,(error, percentData) => {
+    bus_to_chart13((error, percentData) => {
         if (error) {
             return res.send({ error })
         }
@@ -120,7 +122,7 @@ app.get('/api/bus_to_chart13', (req, res) => {
 
 app.get('/api/bus_to_chart18', (req, res) => {
 
-    bus_to_chart(18,(error, percentData) => {
+    bus_to_chart18((error, percentData) => {
         if (error) {
             return res.send({ error })
         }
