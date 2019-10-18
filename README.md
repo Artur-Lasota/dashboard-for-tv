@@ -14,4 +14,4 @@ To run the package it is best to have NVM installed and node set to v10.15.3 and
 
 ## Run application
 
-- if you successfuly install npm packages you should `cd` into the project and run `npm run dev` to run application.
+- if you successfuly install npm packages you should `cd` into the project and run `npm run dev` to run app.

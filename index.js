@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors');
-
+const path = require('path');
 const forecast = require('./src/weather')
 const gas = require('./src/gas')
 const bus = require('./src/bus')
@@ -14,10 +14,12 @@ const app = express()
 const port = process.env.PORT || 5000
 
 if(process.env.NODE_ENV === 'production') {
-app.use(cors({ origin: 'https://ac-tv-app.herokuapp.com/', credentials: true}));
-// https://dashboard-for-tv.herokuapp.com/
+    console.log('ENVIRONMENT: PRODUCTION')
+    app.use(cors({ origin: 'https://dashboard-for-tv.herokuapp.com/', credentials: true}));
+    // https://dashboard-for-tv.herokuapp.com/
 } else {
-app.use(cors({ origin: 'http://localhost:3000', credentials: true}));
+    console.log('ENVIRONMENT: DEVELOPMENT')
+    app.use(cors({ origin: 'http://localhost:3000', credentials: true}));
 }
 
 
@@ -180,12 +182,12 @@ app.get('/api/bitcoin', (req,res) => {
 
 
 
-// use different static folders for different env
-/*
-app.use(express.static(__dirname + '/app/build/' ));
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname+'/app/build/index.html'));
+// use static folder to start the app in the production
+app.use(express.static(__dirname + '/client/build/' ));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
-*/
+
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
