@@ -7,7 +7,7 @@ const bus_to_chart13 = (callback) => {
     var minuteChart = [];
     var iterator = 0;
     var percentsData = [];
-    var url = 'http://localhost:5000/api/bus13'
+    var url = '/api/bus13'
     var currentTime = new Date();
     var modifiedTime = new Date();
     
