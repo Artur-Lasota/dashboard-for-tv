@@ -1,6 +1,6 @@
 # dashboard-for-tv
 
-# Google Maps Api designated area application
+# dashboard-for-tv dashboard panel for telly.
 
 ## Recommanded NPM version
 
