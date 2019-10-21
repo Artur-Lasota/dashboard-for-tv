@@ -10,7 +10,7 @@ class Weather extends Component {
     }
 
     componentDidMount() {
-        fetch('/api/weather')
+        fetch('api/weather')
             .then(response => response.json())
             .then(data => this.setState({ forecast: data.forecast, loaded: true }));
             this.weatherTimer();
@@ -18,7 +18,7 @@ class Weather extends Component {
 
     weatherTimer(){
       setInterval( async() => {
-        fetch('/api/weather')
+        fetch('api/weather')
         .then(response => response.json())
         .then(data => this.setState({ forecast: data.forecast, loaded: true }));
       }, 1000*60*30)

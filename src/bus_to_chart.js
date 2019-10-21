@@ -1,13 +1,15 @@
 const request = require('request')
 
-const bus_to_chart18 = (callback) => {
+const bus_to_chart = (busNum, callback) => {
+
+    console.log(busNum)
 
     var hour = [];
     var minute = [];
     var minuteChart = [];
     var iterator = 0;
     var percentsData = [];
-    var url = '/api/bus18'
+    var url = '/api/bus'+busNum
     var currentTime = new Date();
     var modifiedTime = new Date();
     
@@ -92,9 +94,10 @@ const bus_to_chart18 = (callback) => {
                 convertToEpoch(minuteChart[i].hour, minuteChart[i].minute)
              }
             callback(undefined, percentsData);
+            console.log(percentsData)
         } else {
             callback('There was an error getting the time of bus', undefined);
         }
         });
     }
-module.exports = bus_to_chart18
+module.exports = bus_to_chart

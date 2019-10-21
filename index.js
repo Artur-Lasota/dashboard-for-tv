@@ -3,27 +3,23 @@ const cors = require('cors');
 const path = require('path');
 const forecast = require('./src/weather')
 const gas = require('./src/gas')
-const bus6 = require('./src/bus6')
-const bus13 = require('./src/bus13')
-const bus18 = require('./src/bus18')
+const bus = require('./src/bus')
 const aqi = require('./src/aqi')
 const news = require('./src/news')
 const currency = require('./src/currency')
 const bitcoin = require('./src/bitcoin')
-const bus_to_chart6 = require('./src/bus_to_chart6')
-const bus_to_chart13 = require('./src/bus_to_chart13')
-const bus_to_chart18 = require('./src/bus_to_chart18')
+const bus_to_chart = require('./src/bus_to_chart')
 
 const app = express()
 const port = process.env.PORT || 5000
 
 if(process.env.NODE_ENV === 'production') {
     console.log('ENVIRONMENT: PRODUCTION')
-    app.use(cors({ origin: 'https://dashboard-for-tv.herokuapp.com/', credentials: true}));
+    app.use(cors({ origin: 'https://ac-tv-app.herokuapp.com/', credentials: true}));
     // https://dashboard-for-tv.herokuapp.com/
 } else {
     console.log('ENVIRONMENT: DEVELOPMENT')
-    app.use(cors({ origin: 'http://localhost:3000', credentials: true}));
+    app.use(cors({ origin: 'http://localhost:3000/', credentials: true}));
 }
 
 
@@ -59,7 +55,7 @@ app.get('/api/gas', (req, res) => {
 
 app.get('/api/bus6', (req, res) => {
 
-    bus6((error, busData) => {
+    bus(6,(error, busData) => {
         if (error) {
             return res.send({ error })
         }
@@ -72,7 +68,7 @@ app.get('/api/bus6', (req, res) => {
 
 app.get('/api/bus13', (req, res) => {
 
-    bus13((error, busData) => {
+    bus(13,(error, busData) => {
         if (error) {
             return res.send({ error })
         }
@@ -85,7 +81,7 @@ app.get('/api/bus13', (req, res) => {
 
 app.get('/api/bus18', (req, res) => {
 
-    bus18((error, busData) => {
+    bus(18,(error, busData) => {
         if (error) {
             return res.send({ error })
         }
@@ -98,7 +94,7 @@ app.get('/api/bus18', (req, res) => {
 
 app.get('/api/bus_to_chart6', (req, res) => {
 
-    bus_to_chart6((error, percentData) => {
+    bus_to_chart(6,(error, percentData) => {
         if (error) {
             return res.send({ error })
         }
@@ -111,7 +107,7 @@ app.get('/api/bus_to_chart6', (req, res) => {
 
 app.get('/api/bus_to_chart13', (req, res) => {
 
-    bus_to_chart13((error, percentData) => {
+    bus_to_chart(13,(error, percentData) => {
         if (error) {
             return res.send({ error })
         }
@@ -124,7 +120,7 @@ app.get('/api/bus_to_chart13', (req, res) => {
 
 app.get('/api/bus_to_chart18', (req, res) => {
 
-    bus_to_chart18((error, percentData) => {
+    bus_to_chart(18,(error, percentData) => {
         if (error) {
             return res.send({ error })
         }

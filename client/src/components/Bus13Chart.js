@@ -21,9 +21,14 @@ class Bus13Chart extends Component {
       componentDidMount() {
         fetch('/api/bus_to_chart13')
             .then(response => response.json())
-            .then(data => this.setState({ 
-              percents: data.bus_to_chart13[0]
-            }));
+            .then((data) => {
+              console.log(data)
+              if(data !== undefined && data.bus_to_chart13 !== undefined) {
+                this.setState({ 
+                  percents: data.bus_to_chart13[0]
+                })
+              }
+            });
             this.busToChartTimer();
           }
   
@@ -32,9 +37,11 @@ class Bus13Chart extends Component {
                   fetch('/api/bus_to_chart13')
                   .then(response => response.json())
                   .then(data => {
-                    this.setState({
-                      percents: data.bus_to_chart13[0]
-                    })
+                    if(data !== undefined && data.bus_to_chart6 !== undefined) {
+                      this.setState({
+                        percents: data.bus_to_chart13[0]
+                      })
+                    }
                   })
               }, 1000*60)
             }
