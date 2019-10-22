@@ -86,6 +86,7 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+
 /* @ApexChart Styles */
 
 .bus-box--height{
@@ -119,6 +120,10 @@ body{
   height:250px;
 }
 /* @Weather styles */
+
+.weather-box--margin{
+  margin-top:50px;
+}
 
 .position-box{
   margin-left:10%;
@@ -269,6 +274,13 @@ body{
 /* @News styles */
 * { box-sizing: border-box; }
 
+.box-news{
+  height: 25%;
+  background: #222;
+  margin-bottom: 20px;
+}
+
+
 @-webkit-keyframes ticker {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -321,6 +333,7 @@ body{
   animation-name: ticker;
     -webkit-animation-duration: 240s;
   animation-duration: 240s;
+  margin-right:100px;
 }
 
 .ticker__item {

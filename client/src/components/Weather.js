@@ -40,7 +40,7 @@ class Weather extends Component {
       <div>
       {
         this.state.loaded ? (
-          <div className="box bus-box--height">
+          <div className="box bus-box--height weather-box--margin">
             <div className="current-weather">
               <div className="icon-weather">
                 <i className={'wi wi-day-'+this.changeIcon(this.state.forecast.icon)}></i>

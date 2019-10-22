@@ -24,7 +24,7 @@ class News extends Component {
         }
   render() {
       return (
-        <div className="box box__text">
+        <div className="box__text box-news">
         {
             this.state.loaded ? (
             <div>

@@ -2,7 +2,6 @@ const request = require('request')
 
 const bus_to_chart = (busNum, callback) => {
 
-    console.log(busNum)
 
     var hour = [];
     var minute = [];
@@ -26,7 +25,6 @@ const bus_to_chart = (busNum, callback) => {
     }
     
     request({url, json: true}, function (error, response, html) {
-        console.log(url)
         if (!error && response.statusCode == 200) {
             hour = html.bus
             if(hour !== undefined){
@@ -95,7 +93,6 @@ const bus_to_chart = (busNum, callback) => {
                 convertToEpoch(minuteChart[i].hour, minuteChart[i].minute)
              }
             callback(undefined, percentsData);
-            console.log(percentsData)
         } else {
             callback('There was an error getting the time of bus', undefined);
         }
