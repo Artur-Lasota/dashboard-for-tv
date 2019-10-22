@@ -24,7 +24,7 @@ class Bus18Chart extends Component {
             .then((data) => {
               if(data !== undefined && data.bus_to_chart18 !== undefined) {
                 this.setState({ 
-                  percents: data.bus_to_chart6[0]
+                  percents: data.bus_to_chart18[0]
                 })
               }
             });

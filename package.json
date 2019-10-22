@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "npm install && npm run heroku-postbuild",
     "start": "node index.js",
     "heroku-postbuild": "cd ./client && npm install && npm run build",
     "dev": "cross-env NODE_ENV=development concurrently --kill-others \"cd ./client && npm run start\" \"nodemon index.js\""
