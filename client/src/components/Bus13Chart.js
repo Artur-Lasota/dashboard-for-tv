@@ -45,50 +45,6 @@ class Bus13Chart extends Component {
                   })
               }, 1000*60)
             }
-            // options={
-            //   {
-            //     colors: ['#d94f4f'],
-            //     labels: ['6'],
-            //     plotOptions: {
-            //       radialBar: {
-            //         startAngle: -90,
-            //         endAngle: 90,
-            //         track: {
-            //             background: "#e7e7e7",
-            //             strokeWidth: '97%',
-            //             shadow: {
-            //                 enabled: true,
-            //                 top: 2,
-            //                 left: 0,
-            //                 color: '#999',
-            //                 opacity: 1,
-            //                 blur: 2
-            //             }
-            //         },
-            //         dataLabels: {
-            //           name: {
-            //             fontSize: '76px', //size of label example our bus number
-            //             color: "#fff",
-            //             offsetY: -40
-            //             },
-            //           value: {
-            //             fontSize: '22px',  // size of label example our time to bus departure
-            //             color: '#fff',
-            //             offsetY: -26,
-            //             formatter: function (val) {
-            //               if(val !== 0)
-            //               {
-            //                 var min = 60 * (val * 0.01)
-            //                 return '00:0' + (parseInt(min))
-            //               } else 
-            //                 return '00:00'
-            //             }
-            //           }
-            //         }
-            //       }
-            //     }
-            //   }
-            // }
 
       colorFill(bus){
         var percent = parseInt(bus.percent)
