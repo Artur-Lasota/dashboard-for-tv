@@ -37,7 +37,7 @@ class Bus13Chart extends Component {
                   fetch('/api/bus_to_chart13')
                   .then(response => response.json())
                   .then(data => {
-                    if(data !== undefined && data.bus_to_chart6 !== undefined) {
+                    if(data !== undefined && data.bus_to_chart13 !== undefined) {
                       this.setState({
                         percents: data.bus_to_chart13[0]
                       })

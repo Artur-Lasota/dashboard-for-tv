@@ -27,7 +27,7 @@ const bus_to_chart = (busNum, callback) => {
     request({url, json: true}, function (error, response, html) {
         if (!error && response.statusCode == 200) {
             hour = html.bus
-            console.log(currentTime.getHours())
+            
             if(hour !== undefined){
                 for(i=1; i < hour.length; i++){
                    if(hour[i].hour == currentTime.getHours()){
