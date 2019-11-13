@@ -32,17 +32,22 @@ const bus_to_chart = (busNum, callback) => {
                 for(i=1; i < hour.length; i++){
                    if(hour[i].hour == currentTime.getHours()){
                        if((hour[i] !== undefined || hour[i+1] !== undefined) && i !=0 ){
-                           if(hour[i].hour != 23)
+                           if(hour[i].hour < 23 && hour[i].hour > 3)
                         {
                             minute.push({
                             "minute":  hour[i].minute,
                             "minuteAfterHour": hour[i+1].minute
                          })
-                        } else
+                        } else if(hour[i].hour === 23)
                         {
                             minute.push({
                                 "minute":  hour[i].minute,
                                 "minuteAfterHour": hour[1].minute
+                             })
+                        } else {
+                            minute.push({
+                                "minute":  hour[1].minute,
+                                "minuteAfterHour": hour[2].minute
                              })
                         }
                        }
