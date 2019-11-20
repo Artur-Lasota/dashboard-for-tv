@@ -68,8 +68,8 @@ class Bitcoin extends Component {
           fetch('/api/bitcoin')
             .then(response => response.json())
             .then(data => this.setState(state => {
-               state.bitcoin.push(data.bitcoin[0].rates)}
-               ))
+              state.bitcoin.push(data.bitcoin[0].rates)}
+              ))
             .then (data => this.setState({bitcoinString: data}))
             .then(this.setState({loaded: true}))
             .then(this.checkBitcoinLength());

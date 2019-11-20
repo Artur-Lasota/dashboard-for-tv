@@ -22,26 +22,21 @@ class News extends Component {
                 .then(data => this.setState({ news: data.news, loaded: true }));
             }, 1000*60*30)
         }
-  render() {
-      return (
+render() {
+    return (
         <div className="box__text box-news">
         {
             this.state.loaded ? (
             <div>
         {
-            <div className="ticker-wrap">
-                <div className="ticker">
-              {this.state.news.map((n, i) => 
-              
-                    <div key={i} className="ticker__item">
-                        <div>
-                            <div>
-                                {n.title} 
-                            </div>
-                        </div>
-                    </div>
-              )}
-              </div>
+        <div className="ticker-wrap">
+            <div className="ticker">
+                {this.state.news.map((n, i) => 
+                <div key={i} className="ticker__item">
+                    {n.title} 
+                </div>
+            )}
+            </div>
         </div>
         }
             </div>

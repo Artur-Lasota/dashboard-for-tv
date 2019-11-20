@@ -6,16 +6,16 @@ var cheerio = require('cheerio');
 const gas = (callback) => {
 
 
- var gasData = [];
- var title;
- var diePrice;
- var diePriceDiff;
- var e95PriceDiff;
- var s98PriceDiff;
- var lpgPriceDiff;
- var e95Price;
- var s98Price;
- var lpgPrice;
+var gasData = [];
+var title;
+var diePrice;
+var diePriceDiff;
+var e95PriceDiff;
+var s98PriceDiff;
+var lpgPriceDiff;
+var e95Price;
+var s98Price;
+var lpgPrice;
 
   request('https://www.wnp.pl/nafta/ceny_paliw/', function (error, response, html) {
   if (!error && response.statusCode == 200) {

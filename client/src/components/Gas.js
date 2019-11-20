@@ -10,7 +10,7 @@ class Gas extends Component {
         gasPodlaskie: []
     }
 
-     componentDidMount() {
+    componentDidMount() {
         fetch('/api/gas')
             .then(response => response.json())
             .then(data => this.setState({ gas: data.gas, loaded: true }));
@@ -54,8 +54,8 @@ class Gas extends Component {
             return 'decreases'
         }
 
-  render() {
-      return (
+render() {
+    return (
         <div className="box">
         {
             this.state.loaded ? (
@@ -85,7 +85,7 @@ class Gas extends Component {
                 </div>
                 <div className="fuel-prices--display-inline">
                     <div className="fuel-prices__text">
-                     S98: {g.s98Price}
+                        S98: {g.s98Price}
                     </div>
                     <div className="fuel-prices__text-diff">
                         <Icon className={"icon_large--"+this.changeColor(g.s98PriceDiff)} style={{ fontSize: 42 }}>

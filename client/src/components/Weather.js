@@ -32,7 +32,7 @@ class Weather extends Component {
       } else if(icon === 'clear-day' || icon === 'clear-night'){
         return 'sunny'
       }
-       return icon
+      return icon
     }
 
   render() {

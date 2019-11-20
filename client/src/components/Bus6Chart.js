@@ -205,7 +205,7 @@ class Bus6Chart extends Component {
     render() {
         return (
               <div>
-                 {this.colorFill(this.state.percents)} 
+                {this.colorFill(this.state.percents)} 
               </div>
         );
       }

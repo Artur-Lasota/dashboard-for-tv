@@ -4,8 +4,6 @@ const news = (callback) => {
     var url = 'https://newsapi.org/v2/top-headlines?country=pl&apiKey=7e80e5e99323496ab2a5723ae56764db';
     var bodyData = [];
 
-   
-
 
     request({ url, json: true }, (error, { body }) => {
             if (error) {
@@ -33,8 +31,6 @@ const news = (callback) => {
                     })
                 };
                 
-
-               
                 callback(undefined, bodyData)
             }
         })

@@ -1,23 +1,23 @@
 const request = require('request')
 var cheerio = require('cheerio');
 
- const aqi = (callback) => {
+const aqi = (callback) => {
 
-     var aqivalue;
-     var aqidata = [];
-     var color;
+    var aqivalue;
+    var aqidata = [];
+    var color;
 
-     request('https://aqicn.org/city/poland/bialystok/bialystok-miejska/pl', function (error, response, html) {
+    request('https://aqicn.org/city/poland/bialystok/bialystok-miejska/pl', function (error, response, html) {
 
-         if (!error && response.statusCode == 200) {
-             var $ = cheerio.load(html);
+        if (!error && response.statusCode == 200) {
+            var $ = cheerio.load(html);
 
-                 $('#aqiwgtvalue.aqivalue').each(function(i, element){
-                     aqivalue = ($(this).text());
-                 });
+                $('#aqiwgtvalue.aqivalue').each(function(i, element){
+                    aqivalue = ($(this).text());
+                });
 
-                 if(aqidata !== undefined) {
-                     if(aqivalue !== undefined){
+                if(aqidata !== undefined) {
+                    if(aqivalue !== undefined){
                         if(aqivalue < 40){
                             color = 'green'
                         } else if (aqivalue >= 40 && aqivalue <= 70){
@@ -25,20 +25,20 @@ var cheerio = require('cheerio');
                         } else {
                             color = 'red'
                         }
-                     }
-                     
-                     aqidata.push({
-                       "aqivalue" : aqivalue,
-                       "color" : color
-                     });
-                   }
-                   callback(undefined, aqidata[0]);
+                    }
+                    
+                    aqidata.push({
+                    "aqivalue" : aqivalue,
+                    "color" : color
+                    });
+                }
+                callback(undefined, aqidata[0]);
 
-             } else
-             {
-                 return callback('error with air quality.', undefined);
-             }
-     });
- }
+            } else
+            {
+                return callback('error with air quality.', undefined);
+            }
+    });
+}
 
 module.exports = aqi;

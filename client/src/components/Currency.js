@@ -35,9 +35,9 @@ class Currency extends Component {
             )
         }
 
-  render() {
+render() {
     return (
-         <div className="box box__text">
+        <div className="box box__text">
             <div className="first-block-element">
             <Flag code={ 'EU' } height="42"/> <span className="flag-position">{this.state.currency.EUR} PLN</span>
             </div>
@@ -50,9 +50,9 @@ class Currency extends Component {
             <div>
             <Flag  className="flag-position--square" code={ 'ch' } height="42"/> <span className="flag-text-position--square">{this.state.currency.CHF} PLN</span>
             </div>
-       </div>
-    );
-  }
+        </div>
+        );
+    }
 }
 
 export default Currency;

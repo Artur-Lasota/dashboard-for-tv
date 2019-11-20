@@ -22,7 +22,7 @@ class Timer extends Component {
       }, 1000);
     }
     
-     setDate(){
+    setDate(){
         const now = new Date ();
         const seconds = now.getSeconds();
         const secondsDegrees = ((seconds / 60) *360) + 90;
