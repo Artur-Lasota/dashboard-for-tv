@@ -63,10 +63,18 @@ body{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
-.box {
-  height: 25%;
-  background: #222;
-  margin-bottom: 20px;
+@media screen and (max-width: 792px){
+
+
+
+}
+
+@media screen and (min-width: 793px){
+  .box {
+    height: 25%;
+    background: #222;
+    margin-bottom: 20px;
+  }
 }
 
 .box__text{
@@ -86,188 +94,222 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
-
 /* @ApexChart Styles */
-
-.bus-box--height{
-  height: 270px;
-  background: #222;
-  margin-bottom: 20px;
+@media screen and (max-width: 792px){
+  .ApexCharts__mixed--chart{
+    display: inline-block;
+    width: 100%;
+    margin-top: -60px;
+  }
 }
 
-
-.bus-box--height{
-  height: 270px;
-  background: #222;
-  margin-bottom: 20px;
+@media screen and (min-width: 793px){
+  .bus-box--height{
+    height: 270px;
+    background: #222;
+    margin-bottom: 20px;
+  }
+  
+  .ApexCharts--margin-30{
+    margin-left:5%;
+    display: inline-block;
+  }
+  
+  .ApexCharts__mixed--chart{
+    display: inline-block;
+    width: 30%;
+    margin-top: -60px;
+  }
 }
 
-.ApexCharts--margin-30{
-  margin-left:5%;
-  display: inline-block;
-}
-
-.ApexCharts__mixed--chart{
-  display: inline-block;
-  width: 30%;
-  margin-top: -60px;
-}
-
-.ApexCharts__AQI--chart{
-  display: inline-block;
-  width: 20%;
-  margin-top: -100px;
-  height:250px;
-}
 /* @Weather styles */
 
-.weather-box--margin{
-  margin-top:50px;
+@media screen and (max-width: 792px){
+
+    
+  .icon-weather{
+    font-size: 200px;
+    width:100%;
+    float:left;
+  }
+
+
+  .icon-aqi{
+    float: left;
+    font-size: 200px;
+    padding-top:30px;
+    padding-bottom:30px;
+    margin-left: 80px;
+    width:10%;
+  }
+
 }
 
-.position-box{
-  margin-left:10%;
-  width: 10%;
+@media screen and (min-width: 793px){
+
+  .weather-box--margin{
+    margin-top:50px;
+  }
+  
+  .icon-weather{
+    float: left;
+    font-size: 100px;
+    padding-top:70px;
+    padding-bottom:70px;
+    width:22%;
+  }
+  
+  .icon-aqi{
+    float: left;
+    font-size: 200px;
+    padding-top:30px;
+    padding-bottom:30px;
+    margin-left: 80px;
+    width:10%;
+  }
+  
+  .aqi__text-relative{
+    float: left;
+    position: relative;
+  }
+  
+  .aqi__text-position{
+    font-size: 30px;
+    margin-left: 120px;
+    margin-top: 100px;
+    color: black;
+    position: absolute;
+  }
+  
+  .current-weather{
+    margin-left: 7%;
+  }
+  
+  .temperature__current{
+    font-size: 126px;
+    float: left;
+    padding-top:40px;
+    padding-bottom:40px;
+    width:33%;
+  }
+  
+  .temperature__details{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 42px;
+    margin-left: 40px;
+    float:left;
+    width:15%;
+  }
+  
+  .temperature__high{
+    padding: 10px;
+    color:#da6464;
+  }
+  
+  .temperature__low{
+    padding: 10px;
+    color: #77C0E3;
+  }
+  
+  .temperature__rain{
+    padding: 10px;
+    color: rgb(189, 148, 255);
+  }
 }
 
-.icon-weather{
-  float: left;
-  font-size: 100px;
-  padding-top:70px;
-  padding-bottom:70px;
-  width:22%;
-}
 
-.icon-aqi{
-  float: left;
-  font-size: 200px;
-  padding-top:30px;
-  padding-bottom:30px;
-  margin-left: 80px;
-  width:10%;
-}
-
-.aqi__text-relative{
-  float: left;
-  position: relative;
-}
-
-.aqi__text-position{
-  font-size: 30px;
-  margin-left: 120px;
-  margin-top: 100px;
-  color: black;
-  position: absolute;
-}
-
-.current-weather{
-  margin-left: 7%;
-}
-
-.temperature__current{
-  font-size: 126px;
-  float: left;
-  padding-top:40px;
-  padding-bottom:40px;
-  width:33%;
-}
-
-.temperature__details{
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-size: 42px;
-  margin-left: 40px;
-  float:left;
-  width:15%;
-}
-
-.temperature__high{
-  padding: 10px;
-  color:#da6464;
-}
-
-.temperature__low{
-  padding: 10px;
-  color: #77C0E3;
-}
-
-.temperature__rain{
-  padding: 10px;
-  color: rgb(189, 148, 255);
-}
 
 /* @AQI styles */
+@media screen and (max-width: 792px){
 
-.circle {
-  width: 50px;
-  height: 50px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
+
+
+}
+@media screen and (min-width: 793px){
+
+  .circle {
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+  }
+  
+  .weather__aqi{
+    width: 30%;
+    height: 220px;
+    float:right;
+    padding-top:30px;
+    padding-bottom:30px;
+    margin-right: 100px;
+  }
+  
+  .weather__aqi-text--color{
+    color: black;
+  }
+  
+  .weather__aqi--border{
+    margin-left:30%;
+    height: 180px;
+    width: 180px;
+    border: solid 7px white;
+    border-radius: 50%;
+    margin-top: -10px;
+  }
+  
+  .weather__aqi--text{
+    font-size: 42px;
+    margin-top: 65px;
+    margin-left: 25px;
+  }
+
 }
 
-.weather__aqi{
-  width: 30%;
-  height: 220px;
-  float:right;
-  padding-top:30px;
-  padding-bottom:30px;
-  margin-right: 100px;
-}
-
-.weather__aqi-text--color{
-  color: black;
-}
-
-.weather__aqi--border{
-  margin-left:30%;
-  height: 180px;
-  width: 180px;
-  border: solid 7px white;
-  border-radius: 50%;
-  margin-top: -10px;
-}
-
-.weather__aqi--text{
-  font-size: 42px;
-  margin-top: 65px;
-  margin-left: 25px;
-}
 
 /* @Fuel prices styles */
+@media screen and (max-width: 792px){
 
-.fuel-prices__main-box{
-  margin-top:15px;
+
+
 }
+@media screen and (min-width: 793px){
 
-.fuel-prices--display-inline{
-  display:inline-block;
-  margin-top:-15px;
-  width: 300px;
-}
 
-.fuel-prices__text{
-  margin-left: 10px;
-  float:left;
-}
+  .fuel-prices__main-box{
+    margin-top:15px;
+  }
+  
+  .fuel-prices--display-inline{
+    display:inline-block;
+    margin-top:-15px;
+    width: 300px;
+  }
+  
+  .fuel-prices__text{
+    margin-left: 10px;
+    float:left;
+  }
+  
+  .fuel-prices__text--minus{
+    color:#C72230;
+  }
+  
+  .fuel-prices__text-diff{
+    margin-right:70px;
+    float:right;
+  }
+  
+  .icon_large--incerease{
+    font-size: 42px;
+    color: #da6464;
+  }
+  
+  .icon_large--decreases{
+    font-size: 42px;
+    color: #7ccf29;
+  }
 
-.fuel-prices__text--minus{
-  color:#C72230;
-}
-
-.fuel-prices__text-diff{
-  margin-right:70px;
-  float:right;
-}
-
-.icon_large--incerease{
-  font-size: 42px;
-  color: #da6464;
-}
-
-.icon_large--decreases{
-  font-size: 42px;
-  color: #7ccf29;
 }
 
 
@@ -301,7 +343,7 @@ body{
     visibility: visible;
   }
 
-  99% {
+  100% {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
   }
@@ -322,6 +364,7 @@ body{
   height: 4rem;
   line-height: 4rem;
   white-space: nowrap;
+  padding-right: 100%;
   box-sizing: content-box;
     -webkit-animation-iteration-count: infinite; 
   animation-iteration-count: infinite;
@@ -341,38 +384,51 @@ body{
 }
 
 /* @Currencies styles */
-.bitcoin{
-width: 60%
+
+@media screen and (max-width: 792px){
+
+  .bitcoin{
+    width: 100%
+    }
+
 }
 
-.currency{
-  width: 20%
+@media screen and (min-width: 793px){
+  .bitcoin{
+    width: 60%
+    }
+    
+    .currency{
+      width: 20%
+    }
+    
+    .flag-position{
+      margin-left: 30px;
+    }
+    
+    .flag-text-position--square{
+      margin-left: 40px;
+    }
+    
+    .flag-position--square{
+      margin-left: 10px;
+    }
+    
+    .first-block-element{
+      margin-top: 20px;
+    }
+    
+    .first-block-element-gas{
+      margin-top: 6px;
+    }
+    
+    .gas{
+      width: 20%
+    }
 }
 
-.flag-position{
-  margin-left: 30px;
-}
 
-.flag-text-position--square{
-  margin-left: 40px;
-}
-
-.flag-position--square{
-  margin-left: 10px;
-}
-
-.first-block-element{
-  margin-top: 20px;
-}
-
-.first-block-element-gas{
-  margin-top: 6px;
-}
-
-.gas{
-  width: 20%
-}
-
+    
 .wi-color--yellow{
   color: #e2d847
 }
