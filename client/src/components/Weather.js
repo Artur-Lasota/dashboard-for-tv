@@ -63,6 +63,7 @@ class Weather extends Component {
               <div className="temperature__rain">
                 <i className='wi wi-raindrop'></i> {parseInt(this.state.forecast.rainProb)}%
               </div>
+              <div className="mobile-clearfix"></div>
             </div>
 
             <div>

@@ -7,11 +7,11 @@ import Bus18Chart from './Bus18Chart';
 class Bus extends Component {
   render() {
     return (
-      <div className="bus-box--height">
+      <div className="bus-box--height slider">
         <div className="ApexCharts--margin-30"></div>
-        <div className="ApexCharts__mixed--chart"><Bus6Chart/></div>
-        <div className="ApexCharts__mixed--chart"><Bus13Chart/></div>
-        <div className="ApexCharts__mixed--chart"><Bus18Chart/></div>
+        <div className="ApexCharts__mixed--chart slide" id="slide-1"><Bus6Chart/></div>
+        <div className="ApexCharts__mixed--chart slide" id="slide-2"><Bus13Chart/></div>
+        <div className="ApexCharts__mixed--chart slide" id="slide-3"><Bus18Chart/></div>
       </div>
       );
   }
