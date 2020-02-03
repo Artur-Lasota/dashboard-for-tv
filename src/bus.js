@@ -2,12 +2,16 @@ const request = require('request')
 var cheerio = require('cheerio');
 
 
-const bus = (busNum, callback) => {
-  var hour;
-  var minute = [];
-  var busData = [];
+const bus = (busNum, busStop, callback) => {
+  let hour;
+  let minute = [];
+  let busData = [];
 
-  request('https://www.komunikacja.bialystok.pl/?page=przystanek&nrl=' +busNum+ '&nrp=200&k=1&rozklad=', function (error, response, html) {
+
+
+  
+
+  request('https://www.komunikacja.bialystok.pl/?page=przystanek&nrl=' +busNum+ '&nrp='+busStop+'&k=1&rozklad=', function (error, response, html) {
   if (!error && response.statusCode == 200) {
       var $ = cheerio.load(html);
       $('#rozklad_1').each(function(i, element){
@@ -31,7 +35,7 @@ const bus = (busNum, callback) => {
       });
       callback(undefined, busData);
     } else {
-      callback('There was an error getting the cost of bus', undefined);
+      callback('There was an error getting the time of busa', undefined);
     }
     console.log(error, response.statusCode)
   });

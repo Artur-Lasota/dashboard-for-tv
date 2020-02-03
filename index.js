@@ -55,7 +55,7 @@ app.get('/api/gas', (req, res) => {
 
 app.get('/api/bus6', (req, res) => {
 
-    bus(6,(error, busData) => {
+    bus(6, 70, (error, busData) => {
         if (error) {
             return res.send({ error })
         }
@@ -68,7 +68,7 @@ app.get('/api/bus6', (req, res) => {
 
 app.get('/api/bus13', (req, res) => {
 
-    bus(13,(error, busData) => {
+    bus(13, 200, (error, busData) => {
         if (error) {
             return res.send({ error })
         }
@@ -81,7 +81,7 @@ app.get('/api/bus13', (req, res) => {
 
 app.get('/api/bus18', (req, res) => {
 
-    bus(18,(error, busData) => {
+    bus(18, 70,(error, busData) => {
         if (error) {
             return res.send({ error })
         }

@@ -8,7 +8,7 @@ const bus_to_chart = (busNum, callback) => {
     var minuteChart = [];
     var iterator = 0;
     var percentsData = [];
-    var url = 'https://dashboard-for-tv.herokuapp.com/api/bus'+busNum //http://localhost:5000 for development, https://dashboard-for-tv.herokuapp.com for production
+    var url = 'http://localhost:5000/api/bus'+busNum //http://localhost:5000 for development, https://dashboard-for-tv.herokuapp.com for production
     var currentTime = new Date();
     var modifiedTime = new Date();
     
@@ -27,7 +27,6 @@ const bus_to_chart = (busNum, callback) => {
     request({url, json: true}, function (error, response, html) {
         if (!error && response.statusCode == 200) {
             hour = html.bus
-            
             if(hour !== undefined){
                 for(i=1; i < hour.length; i++){
                     if(hour[i].hour == currentTime.getHours()){

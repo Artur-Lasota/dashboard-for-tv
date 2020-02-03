@@ -8,14 +8,14 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="main-font">
+      <main className="main-font">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         
         <Weather />
         <Bitcoin />
         <Bus />
         <News />
-      </div>
+      </main>
     );
   }
 }
