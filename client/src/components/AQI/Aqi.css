@@ -1,0 +1,13 @@
+.aqi__text-relative{
+    float: left;
+    position: relative;
+  }
+
+  
+.aqi__text-position{
+    font-size: 30px;
+    margin-left: 120px;
+    margin-top: 100px;
+    color: black;
+    position: absolute;
+  }

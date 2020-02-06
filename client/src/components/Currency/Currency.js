@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../App.css';
-import Flag from 'react-world-flags'
+import './Currency.css';
+import Flag from 'react-world-flags';
 
 class Currency extends Component {
 
@@ -23,21 +23,9 @@ class Currency extends Component {
             }, 1000*60*30)
         }
 
-        renderFlag(flag, alt){
-            return(
-                <Flag
-                basePath='img/flags'
-                name={flag}
-                format="png"
-                pngSize={32}
-                alt={alt}
-                />
-            )
-        }
-
 render() {
     return (
-        <div className="box box__text">
+        <div className="currency">
             <div className="first-block-element">
             <Flag code={ 'EU' } height="42"/> <span className="flag-position">{this.state.currency.EUR} PLN</span>
             </div>

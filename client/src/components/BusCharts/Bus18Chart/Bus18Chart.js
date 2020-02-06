@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import '../App.css';
 import Chart from "react-apexcharts";
 
-class Bus6Chart extends Component {
+class Bus18Chart extends Component {
 
     constructor(props) {
         super(props);
@@ -19,45 +18,43 @@ class Bus6Chart extends Component {
       }
 
       componentDidMount() {
-        fetch('/api/bus_to_chart6')
+        fetch('/api/bus_to_chart18')
             .then(response => response.json())
             .then((data) => {
-              if(data !== undefined && data.bus_to_chart6 !== undefined) {
+              if(data !== undefined && data.bus_to_chart18 !== undefined) {
                 this.setState({ 
-                  percents: data.bus_to_chart6[0]
+                  percents: data.bus_to_chart18[0]
                 })
               }
             });
-            this.busToChartTimer()
-        }
-
-        busToChartTimer(){
-          setInterval( async() => {
-            fetch('/api/bus_to_chart6')
-            .then(response => response.json())
-            .then(data => {
-              if(data !== undefined && data.bus_to_chart6 !== undefined) {
-                this.setState({
-                  percents: data.bus_to_chart6[0]
-                })
-              }
-            })
-          }, 1000*60)
-        }
-
-        
+            this.busToChartTimer();
+          }
+  
+          busToChartTimer(){
+              setInterval( async() => {
+                  fetch('/api/bus_to_chart18')
+                  .then(response => response.json())
+                  .then(data => {
+                    if(data !== undefined && data.bus_to_chart18 !== undefined) {
+                      this.setState({
+                        percents: data.bus_to_chart18[0]
+                      })
+                    }
+                  })
+              }, 1000*60)
+            }
+  
 
       colorFill(bus){
         var percent = parseInt(bus.percent)
-        var minute = parseInt(bus.minute)
-        if(minute !== undefined)
+        if(bus.minute !== undefined)
         {
-          if(minute<10){
+          if(bus.minute<10){
             return <Chart
                   options={
                     {
                       colors: ['#C72230'],
-                      labels: ['6'],
+                      labels: ['18'],
                       plotOptions: {
                         radialBar: {
                           startAngle: -90,
@@ -89,9 +86,9 @@ class Bus6Chart extends Component {
                                 {
                                   var min = 60 * (val * 0.01)
                                   return '00:0' + (parseInt(min))
-                                } else 
-                                  return '00:00'
-                              }
+                                }
+                                  else return '00:00'
+                                }
                             }
                           }
                         }
@@ -104,12 +101,12 @@ class Bus6Chart extends Component {
                   width={600}
                 />
             }
-          else if (minute >=10 && minute<15){
+          else if (bus.minute >=10 && bus.minute<15){
             return <Chart
             options={
               {
                 colors: ['#E8DB6B'],
-                labels: ['6'],
+                labels: ['18'],
                 plotOptions: {
                   radialBar: {
                     startAngle: -90,
@@ -156,7 +153,7 @@ class Bus6Chart extends Component {
             options={
               {
                 colors: ['#92D001'],
-                labels: ['6'],
+                labels: ['18'],
                 plotOptions: {
                   radialBar: {
                     startAngle: -90,
@@ -205,7 +202,7 @@ class Bus6Chart extends Component {
     render() {
         return (
               <div>
-                {this.colorFill(this.state.percents)} 
+                {this.colorFill(this.state.percents)}
               </div>
         );
       }
@@ -213,4 +210,4 @@ class Bus6Chart extends Component {
 
 
 
-export default Bus6Chart;
+export default Bus18Chart;

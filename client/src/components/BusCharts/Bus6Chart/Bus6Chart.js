@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import '../App.css';
 import Chart from "react-apexcharts";
 
-class Bus13Chart extends Component {
+class Bus6Chart extends Component {
 
     constructor(props) {
         super(props);
@@ -19,44 +18,45 @@ class Bus13Chart extends Component {
       }
 
       componentDidMount() {
-        fetch('/api/bus_to_chart13')
+        fetch('/api/bus_to_chart6')
             .then(response => response.json())
             .then((data) => {
-              console.log(data)
-              if(data !== undefined && data.bus_to_chart13 !== undefined) {
+              if(data !== undefined && data.bus_to_chart6 !== undefined) {
                 this.setState({ 
-                  percents: data.bus_to_chart13[0]
+                  percents: data.bus_to_chart6[0]
                 })
               }
             });
-            this.busToChartTimer();
-          }
-  
-          busToChartTimer(){
-              setInterval( async() => {
-                  fetch('/api/bus_to_chart13')
-                  .then(response => response.json())
-                  .then(data => {
-                    if(data !== undefined && data.bus_to_chart13 !== undefined) {
-                      this.setState({
-                        percents: data.bus_to_chart13[0]
-                      })
-                    }
-                  })
-              }, 1000*60)
-            }
+            this.busToChartTimer()
+        }
+
+        busToChartTimer(){
+          setInterval( async() => {
+            fetch('/api/bus_to_chart6')
+            .then(response => response.json())
+            .then(data => {
+              if(data !== undefined && data.bus_to_chart6 !== undefined) {
+                this.setState({
+                  percents: data.bus_to_chart6[0]
+                })
+              }
+            })
+          }, 1000*60)
+        }
+
+        
 
       colorFill(bus){
         var percent = parseInt(bus.percent)
-        if(bus.minute !== undefined)
+        var minute = parseInt(bus.minute)
+        if(minute !== undefined)
         {
-          if(bus.minute<10){
+          if(minute<10){
             return <Chart
-            
                   options={
                     {
                       colors: ['#C72230'],
-                      labels: ['13'],
+                      labels: ['6'],
                       plotOptions: {
                         radialBar: {
                           startAngle: -90,
@@ -88,7 +88,7 @@ class Bus13Chart extends Component {
                                 {
                                   var min = 60 * (val * 0.01)
                                   return '00:0' + (parseInt(min))
-                                } else
+                                } else 
                                   return '00:00'
                               }
                             }
@@ -103,12 +103,12 @@ class Bus13Chart extends Component {
                   width={600}
                 />
             }
-          else if (bus.minute >=10 && bus.minute<15){
+          else if (minute >=10 && minute<15){
             return <Chart
             options={
               {
                 colors: ['#E8DB6B'],
-                labels: ['13'],
+                labels: ['6'],
                 plotOptions: {
                   radialBar: {
                     startAngle: -90,
@@ -155,7 +155,7 @@ class Bus13Chart extends Component {
             options={
               {
                 colors: ['#92D001'],
-                labels: ['13'],
+                labels: ['6'],
                 plotOptions: {
                   radialBar: {
                     startAngle: -90,
@@ -204,7 +204,7 @@ class Bus13Chart extends Component {
     render() {
         return (
               <div>
-                {this.colorFill(this.state.percents)}
+                {this.colorFill(this.state.percents)} 
               </div>
         );
       }
@@ -212,4 +212,4 @@ class Bus13Chart extends Component {
 
 
 
-export default Bus13Chart;
+export default Bus6Chart;

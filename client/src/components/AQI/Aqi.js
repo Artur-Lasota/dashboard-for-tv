@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import '../App.css';
+import './Aqi.css';
 
 class Aqi extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
+    state = {
       
       aqi: '',
-      color: '',
-      series: [0]
+      color: ''
     };
-  }
+  
 
     componentDidMount() {
         fetch('/api/aqi')
@@ -36,7 +33,7 @@ class Aqi extends Component {
     <div >
       <div className="aqi__text-relative">
         <div className="icon-aqi">
-          <i className={'wi wi-smog wi-color--'+this.state.color}></i>
+          <i className={'wi wi-smog wi-color--' + this.state.color}></i>
         </div>
         <div className="aqi__text-position">AQI: {this.state.aqi}</div>
       </div>

@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import Weather from './components/Weather';
-import News from './components/News';
-import Bitcoin from './components/Bitcoin';
-import Bus from './components/Bus';
+import WeatherContainer from './containers/WeatherContainer/WeatherContainer';
+import News from './components/News/News';
+import BitcoinContainer from './containers/BitcoinContainer/BitcoinContainer';
+import BusContainer from './containers/BusContainer/BusContainer';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <main className="main-font">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <Weather />
-        <Bitcoin />
-        <Bus />
+        <header>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        </header>
+        <WeatherContainer />
+        <BitcoinContainer/>
+        <BusContainer />
         <News />
       </main>
     );

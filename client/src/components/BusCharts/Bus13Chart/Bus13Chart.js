@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import '../App.css';
 import Chart from "react-apexcharts";
 
-class Bus18Chart extends Component {
+class Bus13Chart extends Component {
 
     constructor(props) {
         super(props);
@@ -19,12 +18,13 @@ class Bus18Chart extends Component {
       }
 
       componentDidMount() {
-        fetch('/api/bus_to_chart18')
+        fetch('/api/bus_to_chart13')
             .then(response => response.json())
             .then((data) => {
-              if(data !== undefined && data.bus_to_chart18 !== undefined) {
+              console.log(data)
+              if(data !== undefined && data.bus_to_chart13 !== undefined) {
                 this.setState({ 
-                  percents: data.bus_to_chart18[0]
+                  percents: data.bus_to_chart13[0]
                 })
               }
             });
@@ -33,18 +33,17 @@ class Bus18Chart extends Component {
   
           busToChartTimer(){
               setInterval( async() => {
-                  fetch('/api/bus_to_chart18')
+                  fetch('/api/bus_to_chart13')
                   .then(response => response.json())
                   .then(data => {
-                    if(data !== undefined && data.bus_to_chart18 !== undefined) {
+                    if(data !== undefined && data.bus_to_chart13 !== undefined) {
                       this.setState({
-                        percents: data.bus_to_chart18[0]
+                        percents: data.bus_to_chart13[0]
                       })
                     }
                   })
               }, 1000*60)
             }
-  
 
       colorFill(bus){
         var percent = parseInt(bus.percent)
@@ -52,10 +51,11 @@ class Bus18Chart extends Component {
         {
           if(bus.minute<10){
             return <Chart
+            
                   options={
                     {
                       colors: ['#C72230'],
-                      labels: ['18'],
+                      labels: ['13'],
                       plotOptions: {
                         radialBar: {
                           startAngle: -90,
@@ -87,9 +87,9 @@ class Bus18Chart extends Component {
                                 {
                                   var min = 60 * (val * 0.01)
                                   return '00:0' + (parseInt(min))
-                                }
-                                  else return '00:00'
-                                }
+                                } else
+                                  return '00:00'
+                              }
                             }
                           }
                         }
@@ -107,7 +107,7 @@ class Bus18Chart extends Component {
             options={
               {
                 colors: ['#E8DB6B'],
-                labels: ['18'],
+                labels: ['13'],
                 plotOptions: {
                   radialBar: {
                     startAngle: -90,
@@ -154,7 +154,7 @@ class Bus18Chart extends Component {
             options={
               {
                 colors: ['#92D001'],
-                labels: ['18'],
+                labels: ['13'],
                 plotOptions: {
                   radialBar: {
                     startAngle: -90,
@@ -211,4 +211,4 @@ class Bus18Chart extends Component {
 
 
 
-export default Bus18Chart;
+export default Bus13Chart;

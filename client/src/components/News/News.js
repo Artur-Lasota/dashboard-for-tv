@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import './News.css';
 
 class News extends Component {
 
@@ -24,7 +24,7 @@ class News extends Component {
         }
 render() {
     return (
-        <div className="box__text box-news">
+        <div className="box-news">
         {
             this.state.loaded ? (
             <div>

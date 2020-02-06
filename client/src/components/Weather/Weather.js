@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
-import Aqi from './Aqi';
+import './Weather.css';
 
 class Weather extends Component {
 
@@ -40,19 +39,15 @@ class Weather extends Component {
       <div>
       {
         this.state.loaded ? (
-          <div className="box bus-box--height weather-box--margin">
+          <div className="weather-box--margin">
             <div className="current-weather">
               <div className="icon-weather">
                 <i className={'wi wi-day-'+this.changeIcon(this.state.forecast.icon)}></i>
               </div>
-
-
               <div className="temperature__current">
                 {this.state.forecast.temperature}°C
               </div>
             </div>
-
-
             <div className="temperature__details">
               <div className="temperature__high">
                 <i className='wi wi-thermometer'></i> {this.state.forecast.highTemp}°C
@@ -64,15 +59,6 @@ class Weather extends Component {
                 <i className='wi wi-raindrop'></i> {parseInt(this.state.forecast.rainProb)}%
               </div>
             </div>
-
-            <div>
-            <Aqi/>
-            </div>
-
-            
-            <div className="clearfix" />
-
-            
           </div>
           ) : ('nothing')
       }

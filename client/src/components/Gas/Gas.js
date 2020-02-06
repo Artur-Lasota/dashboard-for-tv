@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import './Gas.css';
 import Icon from '@material-ui/core/Icon';
 
 class Gas extends Component {
@@ -20,23 +20,11 @@ class Gas extends Component {
 
         gasTimer(){
             setInterval( async() => {
-                fetch('/api/news')
+                fetch('/api/gas')
                 .then(response => response.json())
-                .then(data => this.setState({ news: data.news, loaded: true }));
+                .then(data => this.setState({ gas: data.gas, loaded: true }));
             }, 1000*60*60*24)
         }
-
-        //  gasPodlaskieFilter(){
-        //     this.state.gas.map((g) => 
-        //    {
-        //        if(g.title === "Podlaskie"){
-        //            this.setState((g) => ({
-        //                gasPodlaskie: g
-        //            }))
-        //        }
-
-        //     })
-        // }
 
         changeToIcon(diffSymb){
             if(diffSymb === '+')
@@ -56,13 +44,13 @@ class Gas extends Component {
 
 render() {
     return (
-        <div className="box">
+        <div className="gas">
         {
             this.state.loaded ? (
             <div>
         {
             this.state.gas.map((g, i) => 
-            <div className="box__text fuel-prices__main-box" key={i}>
+            <div className="fuel-prices__main-box" key={i}>
                 <div  className="fuel-prices--display-inline first-block-element-gas">
                     <div className="fuel-prices__text" >
                         DIE: {g.diePrice}

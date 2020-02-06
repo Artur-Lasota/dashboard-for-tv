@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
-import Gas from './Gas';
-import Currency from './Currency';
+import './Bitcoin.css';
 import Chart from "react-apexcharts";
 
 class Bitcoin extends Component {
@@ -115,43 +113,31 @@ class Bitcoin extends Component {
 
   render() {
     return (
-      <div className="box">
+      <div>
       {
           this.state.loaded ? (
           <div>
-      
-          <div className="bitcoin box__text floating-left">
-            {this.state.higherthan2 ? (
+            <div className="bitcoin">
+              {this.state.higherthan2 ? (
+                <div>
+                  <Chart
+                    options={this.state.options}
+                    series= {this.state.series}
+                    type="line"
+                    width="950"
+                    height="250"
+                  />
+                </div>
+              ) : (
               <div>
-                <Chart
-                  options={this.state.options}
-                  series= {this.state.series}
-                  type="line"
-                  width="950"
-                  height="250"
-                />
-              </div>
-            ) : (
-            <div>
-              {this.checkBitcoinLength()}
-            </div>)
-          }
-          
-          
-          </div>
-          <div className="currency floating-left">
-              <Currency />
-          </div>
-          <div className="gas floating-left">
-              <Gas />
-          </div>
-          <div className="clearfix" />
-      
+                {this.checkBitcoinLength()}
+              </div>)
+            }
+            </div>
           </div>
           ) : ('nothing')
       }
-      </div>
-      );
+      </div>);
   }
 
 

@@ -1,0 +1,26 @@
+
+.currency{
+  height: 25%;
+  background: #222;
+  margin-bottom: 20px;
+  font-size: 36px;
+  line-height: 58px;
+  float: left;
+}
+
+.first-block-element{
+    margin-top: 20px;
+  }
+
+  
+.flag-position{
+    margin-left: 30px;
+  }
+  
+  .flag-text-position--square{
+    margin-left: 40px;
+  }
+  
+  .flag-position--square{
+    margin-left: 10px;
+  }
