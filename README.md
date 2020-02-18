@@ -1,6 +1,4 @@
-# dashboard-for-tv
-
-# dashboard-for-tv dashboard panel for telly.
+# dashboard-for-tv dashboard panel.
 
 ## Recommanded NPM version
 
